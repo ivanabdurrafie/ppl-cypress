@@ -1,5 +1,10 @@
 /// <reference types="cypress" />
 
-describe('Testing Demo UI Pages Form'),()=> {
-    
-}
+describe('Open Site', () => {
+    it('test', () => {
+    //   cy.visit()
+    cy.visit('/')
+    cy.contains('Forms').click()
+    cy.contains('Layouts').click()
+    })
+  })
