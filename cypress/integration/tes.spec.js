@@ -29,4 +29,23 @@ describe('Open Site', () => {
         cy.get('#exampleInputPassword1').type('tespassword')
         cy.contains('Check me out').click()
     });
+
+    it('Form without labels', () => {
+        cy.get('[placeholder="Recipients"]').type('Raf')
+        cy.get('[placeholder="Subject"]').type('Ivan')
+        cy.get('[placeholder="Message"]').type('Benar Benar Benar')
+    });
+
+    it('Block Form', () => {
+        cy.get('#inputFirstName').type('Ivan')
+        cy.get('#inputLastName').type('Abdurrafie')
+        cy.get('#inputEmail').type('iabdurrafie48@gmail.com')
+        cy.contains('Website').type('hndr91.github.io/demo-ui/')
+    });
+
+    it('Horizontal Form', () => {
+        cy.get('#inputEmail3').type('iabdurrafie48@gmail.com')
+        cy.get('#inputPassword3').type('tespassword')
+        cy.get('.custom-checkbox').last().click()
+    });
 })
